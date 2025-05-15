@@ -1,0 +1,76 @@
+
+/* 用户头像项特殊样式 */
+.user-item {
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.user-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 1px;
+    background-color: #eee;
+}
+
+
+
+
+/* 用户头像样式 */
+.user-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.user-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.user-avatar-wrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+/* 最简单的用户头像样式 */
+.user-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.user-avatar-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.user-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.user-link:hover .user-icon {
+    transform: scale(1.1);
+}
+

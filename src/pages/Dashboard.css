@@ -1,0 +1,98 @@
+.dashboard {
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.core-data {
+    margin-bottom: 20px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.charts {
+    margin-bottom: 20px;
+}
+
+.monitor {
+    margin-bottom: 20px;
+}
+
+.camera-preview {
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.camera-preview.active {
+    background: #e6f7ff;
+}
+
+.camera-preview p {
+    margin: 10px 0 0;
+    font-weight: 500;
+}
+
+.camera-status {
+    margin-top: 10px;
+}
+
+.violate-list {
+    margin-bottom: 20px;
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.quick-actions button {
+    flex: 1;
+    margin: 0 8px;
+}
+
+.loading-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+/* 动画效果 */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}

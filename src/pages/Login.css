@@ -1,0 +1,359 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 背景装饰元素 */
+.login-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 0%;
+    background: linear-gradient(135deg, rgba(24, 144, 255, 0.1) 0%, rgba(24, 144, 255, 0.2) 100%);
+    animation: float 15s infinite ease-in-out;
+}
+
+.shape1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    width: 200px;
+    height: 200px;
+    bottom: 50px;
+    right: 100px;
+    animation-delay: 2s;
+}
+
+.shape3 {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* 登录表单样式 */
+.login-form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.login-form.animating {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.login-form h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.login-form p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* 输入框样式 */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+}
+
+/* 登录按钮样式 */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #1890ff, #096dd9);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #096dd9, #1890ff);
+    box-shadow: 0 5px 15px rgba(24, 144, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 底部链接样式 */
+.login-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.login-footer a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.login-footer a:hover {
+    color: #1890ff;
+}
+
+.login-footer span {
+    margin: 0 10px;
+    color: #ddd;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .login-form {
+        padding: 30px 20px;
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+
+    .input-group input {
+        padding: 12px 12px 12px 40px;
+    }
+}
+/* 科技感背景元素 */
+.login-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #0f1621;
+    overflow: hidden;
+}
+
+/* 科技线条动画 */
+.tech-line {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(24, 144, 255, 0) 0%, rgba(24, 144, 255, 0.8) 50%, rgba(24, 144, 255, 0) 100%);
+    height: 2px;
+    animation: scanline 5s linear infinite;
+    opacity: 1;
+}
+
+.line1 {
+    width: 100%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.line2 {
+    width: 80%;
+    top: 50%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.line3 {
+    width: 60%;
+    top: 80%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 科技网格背景 */
+.tech-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+            linear-gradient(rgba(24, 144, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(24, 144, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: grid-pulse 10s infinite alternate;
+    opacity: 0.3;
+}
+
+@keyframes grid-pulse {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* 更新登录表单样式 */
+.login-form {
+    background: rgba(15, 22, 33, 0.8);
+    border: 1px solid rgba(24, 144, 255, 0.3);
+    color: #fff;
+}
+
+.login-form h2 {
+    color: #fff;
+}
+
+.login-form p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(24, 144, 255, 0.3);
+    color: #fff;
+}
+
+.input-group input:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.3);
+}
+
+.input-icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-footer a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.login-footer a:hover {
+    color: #1890ff;
+}
+
+/* 按钮发光效果 */
+.login-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.login-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+            to bottom right,
+            transparent,
+            transparent,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent,
+            transparent
+    );
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+    opacity: 0;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(30deg) translate(-20%, -20%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(30deg) translate(100%, 100%);
+        opacity: 0;
+    }
+}
+
+.login-button:hover::after {
+    animation: shine 1.5s infinite;
+}

@@ -1,0 +1,335 @@
+/* 基础样式 */
+:root {
+    --primary-color: #1890ff;
+    --primary-hover: #40a9ff;
+    --text-color: #333;
+    --text-secondary: #666;
+    --border-color: #e8e8e8;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+/* 主容器 */
+.user-settings-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+/* 左侧导航栏 */
+.settings-sidebar {
+    width: 280px;
+    background: linear-gradient(135deg, #1a2b4a, #2c3e50);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-card {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.avatar-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.avatar-wrapper:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.avatar-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 60%, rgba(24, 144, 255, 0.3) 100%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.avatar-wrapper:hover .avatar-hover-effect {
+    opacity: 1;
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.user-role {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 导航菜单 */
+.settings-nav_user {
+    flex-grow: 1;
+    margin: 20px 0;
+}
+
+.nav_user-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.nav_user-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav_user-item.active {
+    background: rgba(24, 144, 255, 0.2);
+    color: white;
+}
+
+.nav_user-item-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--primary-color);
+    transform: translateX(-100%);
+    transition: var(--transition);
+}
+
+.nav_user-item.active .nav_user-item-indicator {
+    transform: translateX(0);
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* 退出按钮 */
+.logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.logout-btn.logging-out {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.logout-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* 右侧内容区 */
+.settings-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #f5f7fa;
+    overflow-y: auto;
+}
+
+.tab-content {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.tab-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* 设置卡片 */
+.setting-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.setting-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.setting-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.setting-card-header h3 {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.setting-card-header .icon {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.setting-card-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.setting-card-action input,
+.setting-card-action select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.setting-card-action input:focus,
+.setting-card-action select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.theme-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-switcher button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-switcher button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .user-settings-container {
+        flex-direction: column;
+    }
+
+    .settings-sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .settings-content {
+        padding: 20px;
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+}

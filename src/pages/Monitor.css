@@ -1,0 +1,131 @@
+.monitor-layout {
+    height: 100vh;
+    background: #fff; /* 背景设置为白色 */
+    color: #000; /* 文字颜色设置为黑色 */
+}
+
+.header {
+    background:#000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid #ddd; /* 添加底部边框 */
+}
+
+.left-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.blue-button {
+
+
+    font-weight: bold !important;
+    color: #1890ff !important; /* 蓝色字体 */
+    font-size: 20px !important; /* 放大字体 */
+    border-color: #1890ff !important; /* 蓝色边框 */
+    margin: 16px; /* 在按钮的四周添加5px的外边距 */
+}
+.video-content {
+    padding: 24px;
+    background: #fff; /* 内容区域背景设置为白色 */
+}
+
+.video-card {
+    background: #fff; /* 视频卡片背景设置为白色 */
+    border: 1px solid #ddd; /* 边框设置为浅灰色 */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.video-container.fullscreen {
+    height: 100vh;
+}
+
+.detection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.detection-box {
+    position: absolute;
+    border: 2px solid;
+    padding: 4px;
+    font-size: 12px;
+    color: #000; /* 检测框文字颜色设置为黑色 */
+    background: rgba(255, 255, 255, 0.8); /* 检测框背景设置为半透明白色 */
+}
+
+.sidebar {
+    background: #fff; /* 侧边栏背景设置为白色 */
+    padding: 16px;
+    border-left: 1px solid #ddd; /* 添加左侧边框 */
+}
+
+.search-bar {
+    margin-bottom: 16px;
+}
+
+.alert-card {
+    background: #fff; /* 异常警报卡片背景设置为白色 */
+    border: 1px solid #ddd; /* 边框设置为浅灰色 */
+    color: #000; /* 文字颜色设置为黑色 */
+}
+
+.alert-card .ant-card-head {
+    border-bottom: 1px solid #ddd; /* 卡片头部边框设置为浅灰色 */
+    color: #000; /* 卡片头部文字颜色设置为黑色 */
+}
+
+.alert-card .ant-card-body {
+    padding: 16px;
+}
+.video-card {
+    margin-bottom: 16px; /* 调整卡片间距 */
+}
+
+.video-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px; /* 减少按钮组和视频之间的间距 */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 比例高度，根据需要可改成 75%、50%等 */
+    overflow: hidden;
+}
+
+.video-container > div {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.detection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 避免遮挡视频操作 */
+}
+
+.detection-box {
+    position: absolute;
+    border: 2px solid blue;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none; /* 避免遮挡视频操作 */
+}
